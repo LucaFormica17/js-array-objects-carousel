@@ -52,16 +52,33 @@ const prevBtn = document.querySelector('.prev');
 
 //mettere in ascolto i pulsanti
 nextBtn.addEventListener('click', function(){
+    //controllo
     //prima rimuovo classe active
     imagesDom[active_element].classList.remove('active');
-    //aumento element
-    active_element ++;
+    if(active_element === images.length - 1){
+        active_element = 0;
+    }
+    else{
+        
+        //aumento element
+        active_element ++;
+    }
     //assegno classe active
     imagesDom[active_element].classList.add('active');
 });
 
 prevBtn.addEventListener('click', function(){
     imagesDom[active_element].classList.remove('active');
-    active_element --;
+    if(active_element === 0){
+        active_element = images.length - 1;
+    }
+    else{
+        active_element --;
+    }
+   
     imagesDom[active_element].classList.add('active');
 });
+
+
+
+//milestone 2
